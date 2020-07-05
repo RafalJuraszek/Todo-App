@@ -1,0 +1,52 @@
+<div class="example-container">
+  <div class="form-container">
+    <form id="search-form" [formGroup]="modifiedTodo" style="font-size: 20px;">
+
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label> Title
+        </mat-label>
+        <input matInput formControlName="title" required >
+        <mat-error *ngIf="modifiedTodo.controls.title.touched && modifiedTodo.controls.title.invalid">
+          <span *ngIf="modifiedTodo.controls.title.errors.required">This field is mandatory.</span>
+          <span *ngIf="modifiedTodo.controls.title.errors.pattern">This field is invalid.</span>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label> Description
+        </mat-label>
+        <textarea matInput formControlName="description" required> </textarea>
+        <mat-error *ngIf="modifiedTodo.controls.description.touched && modifiedTodo.controls.description.invalid">
+          <span *ngIf="modifiedTodo.controls.description.errors.required">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Deadline </mat-label>
+        <input matInput id="deadline" formControlName="deadline" required  [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error *ngIf="modifiedTodo.controls.deadline.touched && modifiedTodo.controls.deadline.invalid">
+          <span *ngIf="modifiedTodo.controls.deadline.errors.required">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Priority</mat-label>
+        <mat-select formControlName="priority" required>
+          <mat-option value="High">high</mat-option>
+          <mat-option value="Medium">medium</mat-option>
+          <mat-option value="Low">low</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button (click)="modifyTodo()" mat-raised-button style="background-color: #d9534f; color: white;" class="my-class" type="submit">Modify</button>
+
+
+    </form>
+  </div>
+</div>
+

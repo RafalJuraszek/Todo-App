@@ -1,0 +1,20 @@
+.example-container{
+  text-align: center;
+}
+.form-container{
+  width: 200 px;
+  margin: 0 px auto;
+  margin-top: 200 px
+}
+
+.form-field{
+  display: block;
+  margin-top: 10px;
+}
+
+.my-class{
+  width: 100px!important;
+  height: 40px!important;
+  min-width: unset!important;
+  font-size:  20px!important;
+}

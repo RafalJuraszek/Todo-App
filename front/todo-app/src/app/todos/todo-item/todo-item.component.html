@@ -1,0 +1,46 @@
+<div *ngIf="!todo.finished" class="list-group-item clearfix" style=" cursor: pointer; margin-bottom: 15px; border-width: 0px;"
+[ngClass]="{'list-group-item': 1, clearfix: 1}"
+>
+
+  <div class="container-fluid">
+    <div  class="row">
+      <div class="col-lg-1" style="margin-top: 10px;">
+                   <span (click)="finish()"  class="material-icons" style="color: green; font-size: 50px">
+                    check_circle
+                    </span>
+      </div>
+      <div (click)="modify()">
+
+
+        <div class="col-lg-4">
+          <div class="row" style="margin-left: 5px;">
+
+            <h1 class="list-group-item-heading">{{todo.title}}</h1>
+            <p class="list-group-item-text" style="font-size: 20px;">{{todo.description}}</p>
+
+          </div>
+        </div>
+        <div class="col-lg-3">
+
+
+          <h3><span class="label label-info">{{todo.deadline | date}}</span></h3>
+        </div>
+
+
+        <div class="col-lg-3">
+
+
+          <h3><span
+            [ngClass]="{label: true, 'label-danger': todo.priority==='High' ? 1 : 0, 'label-primary': todo.priority==='Medium' ? 1 : 0, 'label-success': todo.priority==='Low' ? 1 : 0}"
+            class="label label-danger">{{todo.priority}} Priority</span></h3>
+        </div>
+      </div>
+      <div class="col-lg-1" style="margin-top: 10px;">
+                <span (click)="delete()" class="material-icons" style="color: red; font-size: 50px ">
+                  highlight_off
+                </span>
+      </div>
+
+    </div>
+  </div>
+</div>

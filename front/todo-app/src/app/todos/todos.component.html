@@ -1,0 +1,17 @@
+<div *ngIf="!running; else spinner">
+  <h1 class="text-center">Todos</h1>
+
+  <button class="btn btn-danger btn-lg center-block" type="submit" (click)="addTodo()">Add ToDo</button>
+
+  <ul class="list-group" style="margin-top: 15px;">
+    <app-todo-item (finishEvent)="finish($event)" (modifyEvent)="modifyTodo($event)" (deleteEvent)="delete($event)" [todo]="todo" *ngFor="let todo of todos"></app-todo-item>
+
+  </ul>
+</div>
+<ng-template #spinner>
+  <mat-spinner class="center-block" diameter="250" style="margin-top: 100px;"
+               color="warn"></mat-spinner>
+</ng-template>
+
+
+

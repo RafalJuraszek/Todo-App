@@ -1,0 +1,51 @@
+header {
+  margin-bottom: -20px;
+}
+
+#logo-main {
+  display: block;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 5px;
+
+}
+
+
+
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+}
+li {
+  display: inline-block;
+  float: none;
+  font-size: 15px;}
+
+a {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#navbar-primary.navbar-default {
+  background: transparent;
+  border: none;
+
+}
+.bg {
+  height: 100%;
+  padding-top: 30px;
+
+  /* The image used */
+  background-image: url("../assets/img/todolist.jpg");
+
+  /* Full height */
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: hsla(0,0%,100%,0.75);
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+
+}
